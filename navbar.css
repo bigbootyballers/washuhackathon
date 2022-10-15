@@ -8,7 +8,8 @@ body {
 }
 
 .top {
-    padding: 100px;
+    background-color:var(--deepgreen);
+    margin:0px; /* this might fuck with dean's map snapping cleanly to navbar*/
 }
 
 nav {
@@ -18,18 +19,18 @@ nav {
 }
 
 ul {
-    margin-left: 60px;
+    margin: 0 0 0 30px;
     background-color: var(--grassgreen);
     color: white;
 }
 
-    ul li {
-        list-style: none; /*eliminates bulletpoints*/
-        display: inline-block; /*puts in a row*/
-        float: left;
-        line-height: 50px;
-        background-color: inherit;
-    }
+ul li {
+    list-style: none; /*eliminates bulletpoints*/
+    display: inline-block; /*puts in a row*/
+    float: left;
+    line-height: 50px;
+    background-color: inherit;
+}
 
 ul li a {
     display: block;
