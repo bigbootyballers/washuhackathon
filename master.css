@@ -1,21 +1,45 @@
 /* PASTE THIS AT THE TOP OF ALL HTML FILES <link href="master.css" rel="stylesheet" type="text/css" media="all"> */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+}
 
 body {
-    margin: 0px;
-    padding: 10px;
-    background-color: #fc3bb6;
+    margin:2.5%;
+    background-color:var(--test);
+    text-align:left;
+    font-family:'Muli';
+    font-size:18px;
 }
 
 :root {
-
+    --colname:#1a202c;
+    --deepgreen:#386641;
+    --grassgreen:#6a994e;
+    --yellowgreen:#a7c957;
+    --eggshell:#f2e8cf;
+    --strawberry:#bc4749;
+    --test:rgb(255 106 0);
 }
 
 p {
 
 }
 
-h1 {
+.inquote {
+    padding:30px;
+    background-color:var(--eggshell);
+}
 
+h1 {
+    color: var(--deepgreen);
+    font-family: 'Aleo';
+    font-size: 36px;
+    text-transform: uppercase;
 }
 
 h2 {
