@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Fisher Will Use PHP To Fix This</title>
-    <link href="navbar.css" rel="stylesheet" type="text/css" media="all">
-</head>
+<?php
+include "includes/head.php";
+?>
+
 <body>
     <h1>Group A</h1>
     <h2>Upcoming Events</h2>
@@ -13,4 +10,7 @@
         <li>Pick UP Event 2</li>
     </ul>
 </body>
-</html>
+
+<?php
+include "includes/tail.php";
+?>

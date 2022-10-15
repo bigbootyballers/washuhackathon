@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<link href="master.css" rel="stylesheet" type="text/css" media="all">
+<?php
+include "includes/head.php";
+?>
 
 <body>
     <h1>Header 1 text</h1>
@@ -18,3 +19,6 @@
     password: <input type="password">
 </body>
 
+<?php
+include "includes/tail.php";
+?>
