@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <nav>
-
-    </nav>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="event.html">Map</a></li>
-        </ul>
-    </nav>
+    <div class="top">
+        asldkfjasldkfjs 
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="event.php">Map</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div>
         <link href="navbar.css" rel="stylesheet" type="text/css" media="all">
@@ -25,7 +25,7 @@
 
     
 
-    <a href="group_join.html">Join a Group</a>
+    <a href="group_join.php">Join a Group</a>
     <h3>
         Fisher when he's designing a database:
     </h3>
