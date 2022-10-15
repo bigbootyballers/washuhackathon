@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Groups | NAME</title>
-    <link href="navbar.css" rel="stylesheet" type="text/css" media="all">
-</head>
+<?php
+include "includes/head.php";
+?>
+
 <body>
 
     <p>Fisher said he would put javascript here</p>
@@ -18,4 +15,7 @@
     <h2>Or, create a group:</h2>
 
 </body>
-</html>
+
+<?php
+include "includes/tail.php";
+?>

@@ -1,15 +1,6 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-          crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-            crossorigin=""></script>
+﻿<?php
+include "includes/head.php";
+?>
 
 <body>
     <nav>
@@ -40,4 +31,7 @@
         }).addTo(map);
     </script>
 </body>
-</html>
+
+<?php
+include "includes/tail.php";
+?>

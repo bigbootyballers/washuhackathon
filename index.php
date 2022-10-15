@@ -1,12 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The best way to create a group and keep the world clean." />
-    <title> Home | NAME </title> <!--WILL NEED A BADASS NAME-->
-    <!-- <link rel="stylesheet" href="master.css" /> -->
-</head>
+﻿<?php
+include "includes/head.php";
+?>
 
 <body>
     <div class="top">
@@ -32,4 +26,7 @@
     &#10;
     <iframe src="https://giphy.com/embed/hHxTQkcjmHUTC" width="480" height="304" class="giphy-embed" allowFullScreen></iframe><p>
 </body>
-</html>
+
+<?php
+include "includes/tail.php";
+?>
