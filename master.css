@@ -1,13 +1,19 @@
 /* PASTE THIS AT THE TOP OF ALL HTML FILES <link href="master.css" rel="stylesheet" type="text/css" media="all"> */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
 
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
 }
 
 body {
-    
+    margin:2.5%;
     background-color:var(--test);
+    text-align:left;
+    font-family:'Muli';
+    font-size:18px;
 }
 
 :root {
@@ -24,8 +30,16 @@ p {
 
 }
 
+.inquote {
+    padding:30px;
+    background-color:var(--eggshell);
+}
+
 h1 {
-    color:var(--deepgreen);
+    color: var(--deepgreen);
+    font-family: 'Aleo';
+    font-size: 36px;
+    text-transform: uppercase;
 }
 
 h2 {
