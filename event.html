@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
           integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
           crossorigin="" />
@@ -13,8 +13,9 @@
 
     <style type="text/css">
         #map {
+            
             width: 100%;
-            height: 800px;
+            height: 879px;
         }
     </style>
 </head>
@@ -31,6 +32,7 @@
             center: [38.6488, -90.3108],
             zoom: 15
         });
+        var marker = L.marker([38.6488, -90.3108]).addTo(map)
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
