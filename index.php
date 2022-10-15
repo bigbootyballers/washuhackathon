@@ -13,8 +13,8 @@
         asldkfjasldkfjs 
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="event.html">Map</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="event.php">Map</a></li>
             </ul>
         </nav>
     </div>
@@ -25,7 +25,7 @@
 
     
 
-    <a href="group_join.html">Join a Group</a>
+    <a href="group_join.php">Join a Group</a>
     <h3>
         Fisher when he's designing a database:
     </h3>

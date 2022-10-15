@@ -11,19 +11,11 @@
             integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
             crossorigin=""></script>
 
-    <style type="text/css">
-        #map {
-            
-            width: 100%;
-            height: 879px;
-        }
-    </style>
-</head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="event.html">Map</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="event.php">Map</a></li>
         </ul>
     </nav>
     <div id="map"></div>
