@@ -66,7 +66,7 @@ include "includes/head.php";
         function getJSON() {
             const myJSONString = JSON.stringify(polyPoints);
             alert(myJSONString);
-            download(myJSONString, "Points", "text/plain");
+            download(myJSONString, "Points.txt", "text/plain");
         }
         function download(content, fileName, contentType) {
             const a = document.createElement("a");
