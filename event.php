@@ -40,6 +40,11 @@ include "includes/head.php";
         <h2>
             People
         </h2>
+        <?php
+        if (!user_in_event($_SESSION["username"], $_GET["event_id"])) {
+            printf("<a href='util/event_join.php?event_id={$_GET["event_id"]}'>Join event</a>");
+        }
+        ?>
         <ul>
             <?php
             foreach ($users as $user) {

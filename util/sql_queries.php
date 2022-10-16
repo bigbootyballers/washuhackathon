@@ -137,3 +137,8 @@ function get_event_users($event_id) {
     return get_query_result($query, "i", array($event_id));
 }
 
+function user_in_event($username, $event_id) {
+    $query = "SELECT * FROM events_users WHERE username = ? AND event_id = ?";
+    return count(get_query_result($query, "si", array($username, $event_id))) === 1;
+}
+
