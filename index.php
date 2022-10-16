@@ -63,9 +63,9 @@ include "includes/head.php";
     <?php
     if (isset($_POST["name"])) {
         if ($_POST["private/public"] === "private") {
-            $is_private = true;
+            $is_private = 1;
         } else {
-            $is_private = false;
+            $is_private = 0;
         }
         printf("%s %s %s", $_POST["name"], $_POST["date"], $is_private);
         create_event($_POST["name"], $_POST["date"], $is_private);
