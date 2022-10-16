@@ -79,6 +79,7 @@ include "includes/head.php";
                 printf("var polyPoints = JSON.parse('%s');", $event["route"]);
             }
         ?>
+        var polyLine = L.polyline(polyPoints).addTo(map).openOn(map);
         map.on('click', function (e) {
             var marker = new L.marker(e.latlng).addTo(map);
             /*marker.bindPopup("Location: " + e.latlng.lat + ", " + e.latlng.lng).openPopup();*/
