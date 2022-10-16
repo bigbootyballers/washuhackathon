@@ -91,17 +91,17 @@ function execute_query(string $query, string $types, array $params) {
     $statement->close();
 }
 
-function exists_group(string $group_name) {
-    $query = "SELECT * FROM `groups` WHERE group_name=?";
-    return count(get_query_result($query, "s", array($group_name))) === 1;
+function join_event($event_id, $username) {
+    $query = "INSERT INTO `events_users` (event_id, username) VALUES (?, ?)";
+    execute_query($query, "is", array($event_id, $username));
 }
 
-function add_to_group($username, $group_name) {
-    $query = "INSERT INTO `users_groups` (username, group_name) VALUES (?, ?)";
-    execute_query($query, "ss", array($username, $group_name));
+function create_event($name, $date, $is_private) {
+    $query = "INSERT INTO `events` (event_id, name, date, is_private, route) VALUES (NULL, ?, ?, ?, NULL)";
+    execute_query($query, "ssi", array($name, $date, $is_private));
 }
 
-function create_group($group_name) {
-    $query = "INSERT INTO `groups` (group_name) VALUE (?)";
-    execute_query($query, "s", array($group_name));
+function add_route_to_event($event_id, $route) {
+    $query = "UPDATE `events` SET route = ? WHERE event_id = ?";
+    execute_query($query, "si", array($route, $event_id));
 }
