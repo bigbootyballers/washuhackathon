@@ -65,7 +65,8 @@ include "includes/head.php";
     <?php
     if (isset($_POST["name"])) {
         create_event($_POST["name"], $_POST["date"], $_POST["private/public"] == "private");
-        printf("<p>Created event \"%s\"!</p>", $_POST["name"]);
+        join_last_event($_SESSION["username"]);
+        printf("<p>Created and joined event \"%s\"!</p>", $_POST["name"]);
     }
     ?>
     <h2>

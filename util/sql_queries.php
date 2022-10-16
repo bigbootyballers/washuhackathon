@@ -98,11 +98,19 @@ function execute_query(string $query, string $types, array $params) {
 }
 
 /**
- * Haves a user join an event
+ * Has a user join an event
  */
 function join_event($event_id, $username) {
     $query = "INSERT INTO `events_users` (event_id, username) VALUES (?, ?)";
     execute_query($query, "is", array($event_id, $username));
+}
+
+/**
+ * Has a user join the last created event
+ */
+function join_last_event($username) {
+    global $mysqli;
+    join_event($mysqli->insert_id, $username);
 }
 
 /**
