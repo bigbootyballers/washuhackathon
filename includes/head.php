@@ -13,6 +13,15 @@
             integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
             crossorigin=""></script>
 
+ 
+    <script type="text/javascript">
+        function myFunction() {
+            const myJSONString = JSON.stringify(polyPoints);
+            alert(myJSONString);
+        }
+    </script> 
+
+
     <?php
     # This path is in the perspective of the file that includes, so it should not have ../
     ?>

@@ -7,6 +7,16 @@ include "includes/head.php";
     include "includes/header.php";
     ?>
 
+
+
+    <nav>
+        <ul>
+             <button onclick="myFunction()"> Press to export path.</button>
+        </ul>
+    </nav>
+
+
+
     <div id="map"></div>
     <script type="text/javascript">
         var map = L.map('map', {
