@@ -16,7 +16,9 @@
  
     <script type="text/javascript">
         function exportPath() {
-            document.cookie='route=' + JSON.stringify(polyPoints)
+            // https://stackoverflow.com/a/9882274
+            document.sampleForm.total.value = JSON.stringify(polyPoints);
+            document.forms["sampleForm"].submit();
         }
     </script> 
 

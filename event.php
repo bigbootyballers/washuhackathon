@@ -30,12 +30,15 @@ include "includes/head.php";
         <h1>
             <?php echo $event["name"];?>
         </h1>
-        <p>
-            <button onclick="exportPath()">Export Path</button>
-        </p>
+
+        <form id="sampleForm" name="sampleForm" method="post">
+            <input type="hidden" name="total" id="total" value="">
+            <a href="#" onclick="setValue();">Click to submit</a>
+        </form>
+
         <?php
-        if (isset($_COOKIE['route'])) {
-            print("it worked");
+        foreach ($_POST as $key => $value) {
+            printf("%s %s", $key, $value);
         }
         ?>
     </div>
