@@ -58,23 +58,13 @@ include "includes/head.php";
             <input type="submit" value="Export path"/>
         </form>
         <script>
+        function onDownload(){
             const formInfo = document.forms["route_form"];
             formInfo.route.value = JSON.stringify(polyPoints);
-        </script>
-        <script>
-        function download(content, fileName, contentType) {
-            const a = document.createElement("a");
-            const file = new Blob([content], { type: contentType });
-            a.href = URL.createObjectURL(file);
-            a.download = fileName;
-            a.click();
-        }
-
-        function onDownload(){
-             download(JSON.stringify(polyPoints), "collection-route.txt", "text/plain");
         }
         </script>
 
+        <?php print_r($_POST); ?>
     </div>
 
     <div id="map"></div>
