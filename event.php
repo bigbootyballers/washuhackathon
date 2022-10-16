@@ -68,7 +68,6 @@ include "includes/head.php";
             alert(myJSONString);
         }
 
-}
         </script>
 
         <?php print_r($_POST); ?>
