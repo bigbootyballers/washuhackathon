@@ -13,17 +13,6 @@
             integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
             crossorigin=""></script>
 
- 
-    <script type="text/javascript">
-        function exportPath() {
-            const request = new XMLHttpRequest();
-            request.open("POST", "JSON_Handler.php", true)
-            request.setRequestHeader("Content-type", "application/json")
-            request.send(JSON.stringify(polyPoints))
-        }
-    </script> 
-
-
     <?php
     # This path is in the perspective of the file that includes, so it should not have ../
     ?>

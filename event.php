@@ -31,14 +31,17 @@ include "includes/head.php";
             <?php echo $event["name"];?>
         </h1>
 
-        <form method="POST" onsubmit="exportPath()">
-            <input type="submit" value="Export Path"/>
-        </form>
 
-        <?php
-        $str_json = file_get_contents('php://input');
-        echo $str_json;
-        ?>
+        <form method="post" id="route_form">
+            <input type="hidden" name="route" value="" />
+            <input type="submit" name="Export path" />
+        </form>
+        <script>
+            const formInfo = document.forms["route_form"];
+            formInfo.route.value = JSON.stringify(polyPoints);
+        </script>
+
+        <?php print_r($_POST); ?>
     </div>
 
     <div id="map"></div>
