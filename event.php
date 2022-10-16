@@ -65,8 +65,7 @@ include "includes/head.php";
         <script>
         function getJSON() {
             const myJSONString = JSON.stringify(polyPoints);
-            alert(myJSONString);
-            $('#csv').text(ConvertToCSV(myJSONString));
+            alert($('#csv').text(ConvertToCSV(myJSONString)));
         }
         function ConvertToCSV(objArray) {
             var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
