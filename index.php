@@ -77,7 +77,20 @@ include "includes/head.php";
     if (count($events) === 0) {
         printf("<p>You don't have any upcoming events!</p>");
     } else {
-        printf("<p>You have some events, I'm too lazy to show them.</p>");
+        echo<<<EOF
+        <table>
+            <tr>
+                <th>Event name</th>
+                <th>Date</th>
+            </tr>
+        EOF;
+        foreach ($events as $event) {
+            printf("<tr>");
+            printf("<th>${$event["name"]}</th>");
+            printf("<th>${$event["date"]}</th>");
+            printf("</tr>");
+        }
+        echo "</table>";
     }
     ?>
 </body>
