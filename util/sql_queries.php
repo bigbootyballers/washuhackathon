@@ -63,6 +63,9 @@ function check_login(string $username, string $password) {
 }
 
 function get_query_result(string $query, string $types, array $params) {
+    /**
+     * Helper function for getting a result from a query
+     */
     global $mysqli;
 
     $statement = $mysqli->prepare($query);
@@ -79,6 +82,9 @@ function get_query_result(string $query, string $types, array $params) {
 }
 
 function execute_query(string $query, string $types, array $params) {
+    /**
+     * Helper function for executing a query
+     */
     global $mysqli;
 
     $statement = $mysqli->prepare($query);
@@ -92,16 +98,25 @@ function execute_query(string $query, string $types, array $params) {
 }
 
 function join_event($event_id, $username) {
+    /**
+     * Haves a user join an event
+     */
     $query = "INSERT INTO `events_users` (event_id, username) VALUES (?, ?)";
     execute_query($query, "is", array($event_id, $username));
 }
 
 function create_event($name, $date, $is_private) {
+    /**
+     * Creates an event with automatic event_id and no route
+     */
     $query = "INSERT INTO `events` (event_id, name, date, is_private, route) VALUES (NULL, ?, ?, ?, NULL)";
     execute_query($query, "ssi", array($name, $date, $is_private));
 }
 
 function add_route_to_event($event_id, $route) {
+    /**
+     * Adds a route to an event
+     */
     $query = "UPDATE `events` SET route = ? WHERE event_id = ?";
     execute_query($query, "si", array($route, $event_id));
 }
