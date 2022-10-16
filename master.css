@@ -3,17 +3,20 @@
 @import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    background-color: #eee;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
-    margin:2.5%;
-    background-color:var(--test);
+    background-color: white;
     text-align:left;
     font-family:'Muli';
     font-size:18px;
+    height:100%;
+}
+
+.top {
+    
 }
 
 :root {
@@ -44,6 +47,10 @@ h1 {
 
 h2 {
 
+}
+
+/* Title header */
+h6 {
 }
 
 /* Shows the map */
