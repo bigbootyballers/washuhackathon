@@ -15,10 +15,6 @@ include "includes/head.php";
             center: [38.6488, -90.3108],
             zoom: 15
         });
-        var map = L.map('map', {
-            center: [38.6488, -90.3108],
-            zoom: 15
-        });
         var polyPoints = [];
         map.on('click', function (e) {
             var marker = new L.marker(e.latlng).addTo(map);
