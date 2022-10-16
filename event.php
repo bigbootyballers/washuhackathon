@@ -1,4 +1,23 @@
 ﻿<?php
+require_once "util/sql_queries.php";
+
+$event = null;
+
+function main() {
+    global $event;
+
+    session_start();
+
+    if (!isset($_POST["event_id"])) {
+        header("Location:sign_in.php");
+        exit;
+    }
+
+    $event = get_event($_POST["event_id"]);
+}
+
+main();
+
 include "includes/head.php";
 ?>
 
@@ -7,7 +26,14 @@ include "includes/head.php";
     include "includes/header.php";
     ?>
 
-    <p><button onclick="exportPath()">Export Path</button></p>
+    <div>
+        <h1>
+            <?php echo $event["name"];?>
+        </h1>
+        <p>
+            <button onclick="exportPath()">Export Path</button>
+        </p>
+    </div>
 
     <div id="map"></div>
     <script type="text/javascript">

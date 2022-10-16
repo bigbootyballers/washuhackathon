@@ -123,3 +123,11 @@ function get_user_events($username) {
     $query = "SELECT events.* FROM events JOIN events_users ON events_users.event_id = events.event_id WHERE username = ?";
     return get_query_result($query, "s", array($username));
 }
+
+/**
+ * Get a single event from its id
+ */
+function get_event($event_id) {
+    $query = "SELECT * FROM events WHERE event_id = ?";
+    return get_query_result($query, "s", array($event_id))[0];
+}
