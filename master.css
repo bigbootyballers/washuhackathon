@@ -42,7 +42,7 @@ p {
     background-color:var(--eggshell);
 }
 
-.button {
+input {
     background-color: var(--yellowgreen);
     border: none;
     color: white;
