@@ -63,7 +63,7 @@ include "includes/head.php";
             }
         }
         if (isset($_POST['new_username']) && $_POST['new_password']) {
-            if (check_user_exists($_POST['new_username'])) {
+            if (exists_user($_POST['new_username'])) {
                 echo "Username already exists, pick a different one";
             }
             else {

@@ -8,24 +8,46 @@ require_once "sql_connect.php";
 $mysqli = get_mysqli();
 
 /**
- * Checks to see if that username exists
+ * Helper function for getting a result from a query
  */
-function check_user_exists(string $username) {
+function get_query_result(string $query, string $types, array $params) {
     global $mysqli;
 
-    $statement = $mysqli->prepare("SELECT COUNT(*) FROM users WHERE username=?");
-    $statement->bind_param('s', $username);
+    $statement = $mysqli->prepare($query);
+    if(!$statement){
+        printf("Query prep failed: %s\n", $mysqli->error);
+        exit;
+    }
+    $statement->bind_param($types, ...$params);
     $statement->execute();
-    $statement->bind_result($count);
-    $statement->fetch();
-    $statement->close();
 
-    if ($count == 1) {
-        return true;
+    $result = $statement->get_result();
+    $statement->close();
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
+/**
+ * Helper function for executing a query
+ */
+function execute_query(string $query, string $types, array $params) {
+    global $mysqli;
+
+    $statement = $mysqli->prepare($query);
+    if(!$statement){
+        printf("Query prep failed: %s\n", $mysqli->error);
+        exit;
     }
-    else {
-        return false;
-    }
+    $statement->bind_param($types, ...$params);
+    $statement->execute();
+    $statement->close();
+}
+
+/**
+ * Checks to see if that username exists
+ */
+function exists_user(string $username) {
+    $query = "SELECT * FROM `users` WHERE username=?";
+    return count(get_query_result($query, "s", array($username))) === 1;
 }
 
 /**
@@ -60,41 +82,6 @@ function check_login(string $username, string $password) {
     $statement->close();
 
     return ($count == 1 && password_verify($password, $hash));
-}
-
-/**
- * Helper function for getting a result from a query
- */
-function get_query_result(string $query, string $types, array $params) {
-    global $mysqli;
-
-    $statement = $mysqli->prepare($query);
-    if(!$statement){
-        printf("Query prep failed: %s\n", $mysqli->error);
-        exit;
-    }
-    $statement->bind_param($types, ...$params);
-    $statement->execute();
-
-    $result = $statement->get_result();
-    $statement->close();
-    return $result->fetch_all(MYSQLI_ASSOC);
-}
-
-/**
- * Helper function for executing a query
- */
-function execute_query(string $query, string $types, array $params) {
-    global $mysqli;
-
-    $statement = $mysqli->prepare($query);
-    if(!$statement){
-        printf("Query prep failed: %s\n", $mysqli->error);
-        exit;
-    }
-    $statement->bind_param($types, ...$params);
-    $statement->execute();
-    $statement->close();
 }
 
 /**
