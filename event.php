@@ -81,7 +81,7 @@ include "includes/head.php";
             if (is_null($event["route"])) {
                 printf("var polyPoints = [];");
             } else {
-                printf("var polyPoints = JSON.parse(%s);", $event["route"]);
+                printf("var polyPoints = JSON.parse('%s');", $event["route"]);
             }
         ?>
         map.on('click', function (e) {
