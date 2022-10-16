@@ -32,30 +32,33 @@ include "includes/head.php";
         Create an event
     </h2>
     <form method="POST">
-        <p>
+        <div>
             <label for="name">Event name: </label>
             <input type="text" id="name" name="name">
-        </p>
+        </div>
 
-        <p>
+        <div>
             <label for="date">Date: </label>
             <input type="date" id="date" name="date"
                    value="<?php echo date("Y-m-d");?>">
-        </p>
+        </div>
 
         <fieldset>
             <legend>Private/Public:</legend>
+            <div>
+                <input type="radio" name="private/public" id="private" value="private" checked>
+                <label for="private">Private</label>
+            </div>
 
-            <input type="radio" name="private/public" id="private" value="private" checked>
-            <label for="private">Private</label>
-
-            <input type="radio" name="private/public" id="public" value="public" checked>
-            <label for="public">Public</label>
+            <div>
+                <input type="radio" name="private/public" id="public" value="public" checked>
+                <label for="public">Public</label>
+            </div>
         </fieldset>
 
-        <p>
+        <div>
             <input type="submit" value="Submit">
-        </p>
+        </div>
     </form>
     <h2>
         Upcoming events
