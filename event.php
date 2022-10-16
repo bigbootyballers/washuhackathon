@@ -45,7 +45,7 @@ include "includes/head.php";
         map.on('click', function (e) {
             var marker = new L.marker(e.latlng).addTo(map);
             /*marker.bindPopup("Location: " + e.latlng.lat + ", " + e.latlng.lng).openPopup();*/
-            polyPoints.push([e.latlng.lat, e.latlng.lng]);
+            polyPoints.push([e.latlng.lat.toFixed(4), e.latlng.lng.toFixed(4)]);
             var polyLine = L.polyline(polyPoints).addTo(map).openOn(map);
         });
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
