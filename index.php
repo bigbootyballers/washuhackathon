@@ -52,7 +52,7 @@ include "includes/head.php";
         EOF;
         foreach ($events as $event) {
             printf("<tr>");
-            printf("<th>{$event['name']}</th>");
+            printf("<th><a href='event.php/?event_id={$event["event_id"]}'>{$event['name']}</a></th>");
             printf("<th>{$event['date']}</th>");
             printf("</tr>");
         }
