@@ -31,8 +31,13 @@ include "includes/head.php";
             <?php echo $event["name"];?>
         </h1>
         <p>
-            <button onclick="exportPath()">Export Path</button>
+            <button onclick="document.cookie='route=' + JSON.stringify(polyPoints);">Export Path</button>
         </p>
+        <?php
+        if (isset($_COOKIE['route'])) {
+            print("it worked");
+        }
+        ?>
     </div>
 
     <div id="map"></div>
