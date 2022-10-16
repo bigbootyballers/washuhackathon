@@ -53,21 +53,30 @@ include "includes/head.php";
             ?>
         </ul>
 
-        <form method="post" id="route_form">
+        <form method="post" id="route_form" onsubmit="onDownload()">
             <input type="hidden" name="route" id="route" value="" />
-            <input type="submit" value="Export path" onclick="getJSON()"/>
+            <input type="submit" value="Export path" onclick="onDownload()"/>
         </form>
         <script>
             const formInfo = document.forms["route_form"];
             formInfo.route.value = JSON.stringify(polyPoints);
-            alert(nameValue);
         </script>
         <script>
-        function getJSON() {
+        /*function getJSON() {
             const myJSONString = JSON.stringify(polyPoints);
             alert(myJSONString);
+        }*/
+        function download(content, fileName, contentType) {
+            const a = document.createElement("a");
+            const file = new Blob([content], { type: contentType });
+            a.href = URL.createObjectURL(file);
+            a.download = fileName;
+            a.click();
         }
 
+        function onDownload(){
+             download(JSON.stringify(polyPoints), "json-file-name.txt", "text/plain");
+        }
         </script>
 
         <?php print_r($_POST); ?>
