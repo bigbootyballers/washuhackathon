@@ -55,13 +55,18 @@ include "includes/head.php";
 
         <form method="post" id="route_form">
             <input type="hidden" name="route" id="route" value="" />
-            <input type="submit" value="Export path" id="uniqueID" />
+            <input type="submit" value="Export path" onclick="getJSON()"/>
         </form>
         <script>
             const formInfo = document.forms["route_form"];
             formInfo.route.value = JSON.stringify(polyPoints);
-            var nameValue = document.getElementById("uniqueID").value;
             alert(nameValue);
+        </script>
+        <script>
+        function getJSON() {
+            const myJSONString = JSON.stringify(polyPoints);
+            alert(myJSONString);
+        }
         </script>
 
         <?php print_r($_POST); ?>
