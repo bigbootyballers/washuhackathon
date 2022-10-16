@@ -42,7 +42,7 @@ p {
     background-color:var(--eggshell);
 }
 
-input {
+input[type=submit] {
     background-color: var(--yellowgreen);
     border: none;
     color: white;
