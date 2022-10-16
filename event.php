@@ -71,7 +71,7 @@ include "includes/head.php";
         }
 
         function onDownload(){
-             download(JSON.stringify(polyPoints), "json-file-name.txt", "text/plain");
+             download(JSON.stringify(polyPoints), "collection-route.txt", "text/plain");
         }
         </script>
 
