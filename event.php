@@ -8,12 +8,12 @@ function main() {
 
     session_start();
 
-    if (!isset($_POST["event_id"])) {
+    if (!isset($_GET["event_id"])) {
         header("Location:sign_in.php");
         exit;
     }
 
-    $event = get_event(intval($_POST["event_id"]));
+    $event = get_event(intval($_GET["event_id"]));
 }
 
 main();
