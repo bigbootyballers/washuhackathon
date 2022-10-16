@@ -4,7 +4,7 @@ require_once "util/sql_queries.php";
 
 function main() {
     session_start();
-    if (isset($_SESSION["username"])) {
+    if (!isset($_SESSION["username"])) {
         header("Location: index.php");
         exit();
     }
