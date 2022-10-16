@@ -115,3 +115,11 @@ function add_route_to_event($event_id, $route) {
     $query = "UPDATE `events` SET route = ? WHERE event_id = ?";
     execute_query($query, "si", array($route, $event_id));
 }
+
+/**
+ * Get an array of a users' events
+ */
+function get_user_events($username) {
+    $query = "SELECT events.* FROM events JOIN events_users ON events_users.event_id = events.event_id WHERE username = ?";
+    return get_query_result($query, "s", array($username));
+}

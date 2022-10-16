@@ -72,9 +72,14 @@ include "includes/head.php";
     <h2>
         Upcoming events
     </h2>
-    <p>
-        ...
-    </p>
+    <?php
+    $events = get_user_events($_SESSION["username"]);
+    if (count($events) === 0) {
+        printf("<p>You don't have any upcoming events!</p>");
+    } else {
+        printf("<p>You have some events, I'm too lazy to show them.</p>");
+    }
+    ?>
 </body>
 
 <?php
