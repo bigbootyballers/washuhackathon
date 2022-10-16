@@ -77,6 +77,13 @@ include "includes/head.php";
             center: [38.6488, -90.3108],
             zoom: 15
         });
+        <?php
+            if (is_null($event["route"])) {
+                printf("var polyPoints = [];");
+            } else {
+                printf("var polyPoints = JSON.parse(%s);", $event["route"]);
+            }
+        ?>
         var polyPoints = [];
         map.on('click', function (e) {
             var marker = new L.marker(e.latlng).addTo(map);
