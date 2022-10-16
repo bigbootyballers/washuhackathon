@@ -34,7 +34,7 @@
         var polyPoints = [];
         map.on('click', function (e) {
             var marker = new L.marker(e.latlng).addTo(map);
-            marker.bindPopup("Location: " + e.latlng.lat + ", " + e.latlng.lng).openPopup();
+            /*marker.bindPopup("Location: " + e.latlng.lat + ", " + e.latlng.lng).openPopup();*/
             polyPoints.push([e.latlng.lat, e.latlng.lng]);
             var polyLine = L.polyline(polyPoints).addTo(map).openOn(map);
         });
