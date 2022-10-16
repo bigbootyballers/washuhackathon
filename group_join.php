@@ -3,6 +3,9 @@ include "includes/head.php";
 ?>
 
 <body>
+    <?php
+    include "includes/header.php";
+    ?>
 
     <p>Fisher said he would put javascript here</p>
     <p>Or, create a new group: </p>
