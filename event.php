@@ -55,17 +55,13 @@ include "includes/head.php";
 
         <form method="post" id="route_form" onsubmit="onDownload()">
             <input type="hidden" name="route" id="route" value="" />
-            <input type="submit" value="Export path" onclick="onDownload()"/>
+            <input type="submit" value="Export path"/>
         </form>
         <script>
             const formInfo = document.forms["route_form"];
             formInfo.route.value = JSON.stringify(polyPoints);
         </script>
         <script>
-        /*function getJSON() {
-            const myJSONString = JSON.stringify(polyPoints);
-            alert(myJSONString);
-        }*/
         function download(content, fileName, contentType) {
             const a = document.createElement("a");
             const file = new Blob([content], { type: contentType });
@@ -79,7 +75,6 @@ include "includes/head.php";
         }
         </script>
 
-        <?php print_r($_POST); ?>
     </div>
 
     <div id="map"></div>
