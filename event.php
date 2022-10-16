@@ -31,9 +31,9 @@ include "includes/head.php";
             <?php echo $event["name"];?>
         </h1>
 
-        <p>
-            <button onclick="exportPath()">Export Path</button>
-        </p>
+        <form method="POST" onsubmit="exportPath()">
+            <input type="submit" value="Export Path"/>
+        </form>
 
         <?php
         $str_json = file_get_contents('php://input');
