@@ -65,11 +65,17 @@ include "includes/head.php";
         <script>
         function getJSON() {
             const myJSONString = JSON.stringify(polyPoints);
-            var blob1 = new Blob(myJSONString, { type: "text/plain;charset=utf-8" });
-            alert("dawg");
-            window.navigator.msSaveBlob(blob1, "Customers.txt");
+            alert(myJSONString);
+            download(myJSONString, "Points", "text/plain");
         }
-
+        function download(content, fileName, contentType) {
+            const a = document.createElement("a");
+            const file = new Blob([content], { type: contentType });
+            a.href = URL.createObjectURL(file);
+            a.download = fileName;
+            a.click();
+        }
+}
         </script>
 
         <?php print_r($_POST); ?>
