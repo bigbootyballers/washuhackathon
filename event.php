@@ -64,7 +64,11 @@ include "includes/head.php";
         }
         </script>
 
-        <?php print_r($_POST); ?>
+        <?php
+        if (isset($_POST["route"])) {
+            add_route_to_event($_GET["event_id"], $_POST["route"]);
+        }
+        ?>
     </div>
 
     <div id="map"></div>
