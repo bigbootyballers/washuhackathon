@@ -34,24 +34,24 @@ include "includes/head.php";
     <form method="POST">
         <div>
             <label for="name">Event name: </label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
         </div>
 
         <div>
             <label for="date">Date: </label>
             <input type="date" id="date" name="date"
-                   value="<?php echo date("Y-m-d");?>">
+                   value="<?php echo date("Y-m-d");?>" required>
         </div>
 
         <fieldset>
             <legend>Private/public:</legend>
             <div>
-                <input type="radio" name="private/public" id="private" value="private" checked>
+                <input type="radio" name="private/public" id="private" value="private" checked required>
                 <label for="private">Private</label>
             </div>
 
             <div>
-                <input type="radio" name="private/public" id="public" value="public">
+                <input type="radio" name="private/public" id="public" value="public" required>
                 <label for="public">Public</label>
             </div>
         </fieldset>
