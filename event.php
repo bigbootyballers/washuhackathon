@@ -13,7 +13,7 @@ function main() {
         exit;
     }
 
-    $event = get_event($_POST["event_id"]);
+    $event = get_event(intval($_POST["event_id"]));
 }
 
 main();
