@@ -29,9 +29,24 @@ include "includes/head.php";
     </p>
 
     <h2>
-        Groups
+        Create an event
     </h2>
-
+    <form method="POST">
+        <p>
+            <label for="date">Date: </label>
+            <input type="date" id="date" name="date"
+                   value="<?php echo date("Y-m-d");?>">
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+    <h2>
+        Upcoming events
+    </h2>
+    <p>
+        ...
+    </p>
 </body>
 
 <?php
