@@ -1,4 +1,6 @@
 ﻿<?php
+require_once "util/sql_queries.php";
+
 function main() {
     session_start();
     # https://stackoverflow.com/a/15088537
@@ -62,13 +64,7 @@ include "includes/head.php";
     </form>
     <?php
     if (isset($_POST["name"])) {
-        if ($_POST["private/public"] === "private") {
-            $is_private = 1;
-        } else {
-            $is_private = 0;
-        }
-        printf("%s %s %s", $_POST["name"], $_POST["date"], $is_private);
-        create_event($_POST["name"], $_POST["date"], $is_private);
+        create_event($_POST["name"], $_POST["date"], $_POST["private/public"] == "private");
         printf("<p>Created event \"%s\"!</p>", $_POST["name"]);
     }
     ?>
