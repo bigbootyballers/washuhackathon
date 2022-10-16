@@ -62,6 +62,7 @@ include "includes/head.php";
     </form>
     <?php
     if (isset($_POST["name"])) {
+        printf("%s %s %s", $_POST["name"], $_POST["date"], $_POST["private/public"] == "private");
         create_event($_POST["name"], $_POST["date"], $_POST["private/public"] == "private");
         printf("<p>Created event \"%s\"!</p>", $_POST["name"]);
     }
