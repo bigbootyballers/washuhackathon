@@ -53,7 +53,7 @@ include "includes/head.php";
             ?>
         </ul>
 
-        <form method="post" id="route_form" onsubmit="onDownload()">
+        <form method="post" id="route_form" onsubmit="onDownload()" action="util/export_path.php">
             <input type="hidden" name="route" id="route" value="" />
             <input type="submit" value="Export path"/>
         </form>
@@ -63,12 +63,6 @@ include "includes/head.php";
             formInfo.route.value = JSON.stringify(polyPoints);
         }
         </script>
-
-        <?php
-        if (isset($_POST["route"])) {
-            add_route_to_event($_GET["event_id"], $_POST["route"]);
-        }
-        ?>
     </div>
 
     <div id="map"></div>
