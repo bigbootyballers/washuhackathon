@@ -109,7 +109,7 @@ function join_event($event_id, $username) {
  * Creates an event with automatic event_id and no route
  */
 function create_event($name, $date, $is_private) {
-    $query = "INSERT INTO `events` (event_id, name, date, is_private, route) VALUES (NULL, ?, ?, ?, NULL)";
+    $query = "INSERT INTO `events` (event_id, event_name, event_date, is_private, route) VALUES (NULL, ?, ?, ?, NULL)";
     execute_query($query, "ssi", array($name, $date, $is_private));
 }
 
