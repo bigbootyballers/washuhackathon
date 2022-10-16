@@ -2,9 +2,11 @@
 require_once "util/sql_queries.php";
 
 $event = null;
+$users = null;
 
 function main() {
     global $event;
+    global $users;
 
     session_start();
 
@@ -12,8 +14,13 @@ function main() {
         header("Location:sign_in.php");
         exit;
     }
+    if (!isset($_SESSION["username"])) {
+        header("Location:sign_in.php");
+        exit;
+    }
 
     $event = get_event(intval($_GET["event_id"]));
+    $users = get_event_users(intval($_GET["event_id"]));
 }
 
 main();
@@ -30,7 +37,16 @@ include "includes/head.php";
         <h1>
             <?php echo $event["name"];?>
         </h1>
-
+        <h2>
+            People
+        </h2>
+        <ul>
+            <?php
+            foreach ($users as $user) {
+                printf("<li>%s</li>", $user["username"]);
+            }
+            ?>
+        </ul>
 
         <form method="post" id="route_form">
             <input type="hidden" name="route" id="route" value="" />
