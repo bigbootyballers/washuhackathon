@@ -18,4 +18,5 @@ if (!isset($_SESSION["username"])) {
 
 join_event($_GET["event_id"], $_SESSION["username"]);
 
+header("Location:../event.php?event_id={$_GET["event_id"]}");
 exit();
