@@ -7,10 +7,10 @@ require_once "sql_connect.php";
 
 $mysqli = get_mysqli();
 
+/**
+ * Checks to see if that username exists
+ */
 function check_user_exists(string $username) {
-    /**
-     * Checks to see if that username exists
-     */
     global $mysqli;
 
     $statement = $mysqli->prepare("SELECT COUNT(*) FROM users WHERE username=?");
@@ -28,10 +28,10 @@ function check_user_exists(string $username) {
     }
 }
 
+/**
+ * Creates new user
+ */
 function create_user(string $username, string $password) {
-    /**
-     * Creates new user
-     */
     global $mysqli;
 
     $statement = $mysqli->prepare("insert into users (username, hashed_password) values (?, ?)");
@@ -46,10 +46,10 @@ function create_user(string $username, string $password) {
     $statement->close();
 }
 
+/**
+ * Checks if login info is valid
+ */
 function check_login(string $username, string $password) {
-    /**
-     * Checks if login info is valid
-     */
     global $mysqli;
 
     $statement = $mysqli->prepare("SELECT COUNT(*), hashed_password FROM users WHERE username=?");
@@ -62,10 +62,10 @@ function check_login(string $username, string $password) {
     return ($count == 1 && password_verify($password, $hash));
 }
 
+/**
+ * Helper function for getting a result from a query
+ */
 function get_query_result(string $query, string $types, array $params) {
-    /**
-     * Helper function for getting a result from a query
-     */
     global $mysqli;
 
     $statement = $mysqli->prepare($query);
@@ -81,10 +81,10 @@ function get_query_result(string $query, string $types, array $params) {
     return $result->fetch_all(MYSQLI_ASSOC);
 }
 
+/**
+ * Helper function for executing a query
+ */
 function execute_query(string $query, string $types, array $params) {
-    /**
-     * Helper function for executing a query
-     */
     global $mysqli;
 
     $statement = $mysqli->prepare($query);
@@ -97,26 +97,26 @@ function execute_query(string $query, string $types, array $params) {
     $statement->close();
 }
 
+/**
+ * Haves a user join an event
+ */
 function join_event($event_id, $username) {
-    /**
-     * Haves a user join an event
-     */
     $query = "INSERT INTO `events_users` (event_id, username) VALUES (?, ?)";
     execute_query($query, "is", array($event_id, $username));
 }
 
+/**
+ * Creates an event with automatic event_id and no route
+ */
 function create_event($name, $date, $is_private) {
-    /**
-     * Creates an event with automatic event_id and no route
-     */
     $query = "INSERT INTO `events` (event_id, name, date, is_private, route) VALUES (NULL, ?, ?, ?, NULL)";
     execute_query($query, "ssi", array($name, $date, $is_private));
 }
 
+/**
+ * Adds a route to an event
+ */
 function add_route_to_event($event_id, $route) {
-    /**
-     * Adds a route to an event
-     */
     $query = "UPDATE `events` SET route = ? WHERE event_id = ?";
     execute_query($query, "si", array($route, $event_id));
 }
