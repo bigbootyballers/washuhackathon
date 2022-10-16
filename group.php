@@ -4,8 +4,9 @@ include "includes/head.php";
 
 <body>
     <?php
-    include "header.php";
+    include "includes/header.php";
     ?>
+
     <h1>Group A</h1>
     <h2>Upcoming Events</h2>
     <ul>

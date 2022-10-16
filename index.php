@@ -4,7 +4,7 @@ include "includes/head.php";
 
 <body>
     <?php
-    include "header.php";
+    include "includes/header.php";
     ?>
    
     <h3>

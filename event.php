@@ -4,8 +4,9 @@ include "includes/head.php";
 
 <body>
     <?php
-    include "header.php";
+    include "includes/header.php";
     ?>
+
     <div id="map"></div>
     <script type="text/javascript">
         var map = L.map('map', {
