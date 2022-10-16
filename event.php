@@ -25,26 +25,14 @@ include "includes/head.php";
     <?php
     include "includes/header.php";
     ?>
-    <script>
-        function postValue() {
-            document.route_form.total.value = JSON.stringify(polyPoints)
-            document.forms["route_form"].submit();
-        }
-    </script>
 
     <div>
         <h1>
             <?php echo $event["name"];?>
         </h1>
-        <form id="route_form" name="route_form" method="post">
-            <input type="hidden" name="route" id="route" value="">
-            <a href="#" onclick="postValue();">Export Path</a>
-        </form>
-        <?php
-        if (isset($_POST["route_form"])) {
-            printf("<p>Sent the thing</p>");
-        }
-        ?>
+        <p>
+            <button onclick="exportPath()">Export Path</button>
+        </p>
     </div>
 
     <div id="map"></div>
