@@ -28,7 +28,7 @@ include "includes/head.php";
                 <input type="submit" value="Submit">
             </p>
         </form>
-
+        <br>
         <h1>Register</h1>
         <form method="POST">
             <p>

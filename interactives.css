@@ -1,0 +1,22 @@
+@import "master.css";
+
+input[type=submit] {
+    background-color: var(--grassgreen);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0 10px -5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input[type=submit]:hover {
+    background-color: var(--yellowgreen);
+}
+
+form {
+    padding: 0 25px;
+}
