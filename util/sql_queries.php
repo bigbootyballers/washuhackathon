@@ -61,3 +61,47 @@ function check_login(string $username, string $password) {
 
     return ($count == 1 && password_verify($password, $hash));
 }
+
+function get_query_result(string $query, string $types, array $params) {
+    global $mysqli;
+
+    $statement = $mysqli->prepare($query);
+    if(!$statement){
+        printf("Query prep failed: %s\n", $mysqli->error);
+        exit;
+    }
+    $statement->bind_param($types, ...$params);
+    $statement->execute();
+
+    $result = $statement->get_result();
+    $statement->close();
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
+function execute_query(string $query, string $types, array $params) {
+    global $mysqli;
+
+    $statement = $mysqli->prepare($query);
+    if(!$statement){
+        printf("Query prep failed: %s\n", $mysqli->error);
+        exit;
+    }
+    $statement->bind_param($types, ...$params);
+    $statement->execute();
+    $statement->close();
+}
+
+function exists_group(string $group_name) {
+    $query = "SELECT * FROM `groups` WHERE group_name=?";
+    return count(get_query_result($query, "s", array($group_name))) === 1;
+}
+
+function add_to_group($username, $group_name) {
+    $query = "INSERT INTO `users_groups` (username, group_name) VALUES (?, ?)";
+    execute_query($query, "ss", array($username, $group_name));
+}
+
+function create_group($group_name) {
+    $query = "INSERT INTO `groups` (group_name) VALUE (?)";
+    execute_query($query, "s", array($group_name));
+}
