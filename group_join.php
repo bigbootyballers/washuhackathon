@@ -20,8 +20,8 @@ include "includes/head.php";
     include "includes/header.php";
     ?>
 
-    <h1>Group</h1>
-    <h2>Join a Group</h2>
+    <h1>Join / create a group</h1>
+    <h2>Join a group</h2>
     <form method="POST">
         <p>
             <label for="group_name">Group name: </label>
