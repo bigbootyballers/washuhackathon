@@ -86,8 +86,8 @@ include "includes/head.php";
         EOF;
         foreach ($events as $event) {
             printf("<tr>");
-            printf("<th>${$event["name"]}</th>");
-            printf("<th>${$event["date"]}</th>");
+            printf("<th>{$event['name']}</th>");
+            printf("<th>{$event['date']}</th>");
             printf("</tr>");
         }
         echo "</table>";
