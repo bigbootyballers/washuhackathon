@@ -1,1 +1,6 @@
-someday this will work
+# Hackathon project
+Group members:
+* Charlie
+* Dean
+* Emily
+* Fisher
