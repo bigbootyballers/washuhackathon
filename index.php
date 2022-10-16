@@ -1,4 +1,15 @@
 ﻿<?php
+function main() {
+    session_start();
+    # https://stackoverflow.com/a/15088537
+    if (!isset($_SESSION['username'])) {
+        header("Location:sign_in.php");
+        exit;
+    }
+}
+
+main();
+
 include "includes/head.php";
 ?>
 
@@ -7,11 +18,20 @@ include "includes/head.php";
     include "includes/header.php";
     ?>
    
-    <h3>
-        Fisher when he's designing a database:
-    </h3>
-    &#10;
-    <iframe src="https://giphy.com/embed/hHxTQkcjmHUTC" width="480" height="304" class="giphy-embed" allowFullScreen></iframe><p>
+    <h1>
+        Home
+    </h1>
+    <p>
+        <?php
+        printf("Signed in as %s", htmlspecialchars($_SESSION['username']));
+        ?>
+        (<a href="sign_out.php">sign out</a>)
+    </p>
+
+    <h2>
+        Groups
+    </h2>
+
 </body>
 
 <?php
