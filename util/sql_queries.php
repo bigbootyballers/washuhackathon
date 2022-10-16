@@ -129,5 +129,5 @@ function get_user_events($username) {
  */
 function get_event($event_id) {
     $query = "SELECT * FROM events WHERE event_id = ?";
-    return get_query_result($query, "s", array($event_id))[0];
+    return get_query_result($query, "i", array($event_id))[0];
 }
