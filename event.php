@@ -38,6 +38,7 @@ include "includes/head.php";
         </form>
         <script>
             const formInfo = document.forms["route_form"];
+            alert(myJSONString);
             formInfo.route.value = JSON.stringify(polyPoints);
         </script>
 
