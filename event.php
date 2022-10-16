@@ -6,6 +6,7 @@ $users = null;
 
 function main() {
     global $event;
+    global $users;
 
     session_start();
 
