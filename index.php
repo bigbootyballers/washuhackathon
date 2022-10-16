@@ -33,10 +33,26 @@ include "includes/head.php";
     </h2>
     <form method="POST">
         <p>
+            <label for="name">Event name: </label>
+            <input type="text" id="name" name="name">
+        </p>
+
+        <p>
             <label for="date">Date: </label>
             <input type="date" id="date" name="date"
                    value="<?php echo date("Y-m-d");?>">
         </p>
+
+        <fieldset>
+            <legend>Private/Public:</legend>
+
+            <input type="radio" name="private/public" id="private" value="private" checked>
+            <label for="private">Private</label>
+
+            <input type="radio" name="private/public" id="public" value="public" checked>
+            <label for="public">Public</label>
+        </fieldset>
+
         <p>
             <input type="submit" value="Submit">
         </p>
