@@ -60,6 +60,12 @@ include "includes/head.php";
             <input type="submit" value="Submit">
         </div>
     </form>
+    <?php
+    if (isset($_POST["name"])) {
+        create_event($_POST["name"], $_POST["date"], $_POST["private/public"] == "private");
+        printf("<p>Created event \"%s\"!</p>", $_POST["name"]);
+    }
+    ?>
     <h2>
         Upcoming events
     </h2>
