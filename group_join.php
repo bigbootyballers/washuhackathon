@@ -35,9 +35,9 @@ include "includes/head.php";
     if (isset($_POST["group_name"])) {
         if (exists_group($_POST["group_name"])) {
             add_to_group($_SESSION["username"], $_POST["group_name"]);
-            printf("Joined group %s\n!", $_POST["group_name"]);
+            printf("<p>Joined group \"%s\"</p>!", $_POST["group_name"]);
         } else {
-            echo "That group does not exist.";
+            printf("<p>Group \"%s\"does not exist.</p>", $_POST["group_name"]);
         }
     }
     ?>
@@ -55,11 +55,11 @@ include "includes/head.php";
     <?php
     if (isset($_POST["new_group_name"])) {
         if (exists_group($_POST["new_group_name"])) {
-            echo "A group with that name already exists!";
+            printf("<p>A group with the name \"%s\" already exists.</p>", $_POST["new_group_name"]);
         } else {
             create_group($_POST["new_group_name"]);
             add_to_group($_SESSION["username"], $_POST["new_group_name"]);
-            printf("Created and joined group %s\n!", $_POST["new_group_name"]);
+            printf("<p>Created and joined group \"%s\"!</p>", $_POST["new_group_name"]);
         }
     }
     ?>
