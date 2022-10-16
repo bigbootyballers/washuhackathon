@@ -131,3 +131,9 @@ function get_event($event_id) {
     $query = "SELECT * FROM events WHERE event_id = ?";
     return get_query_result($query, "i", array($event_id))[0];
 }
+
+function get_event_users($event_id) {
+    $query = "SELECT users.* FROM users JOIN events_users ON events_users.username = users.username WHERE event_id = ?";
+    return get_query_result($query, "i", array($event_id));
+}
+
