@@ -3,6 +3,10 @@ include "includes/head.php";
 ?>
 
 <body>
+    <?php
+    include "header.php";
+    ?>
+    
     <h1>Header 1 text</h1>
     <h2>Header 2 text</h2>
 

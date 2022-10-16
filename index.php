@@ -3,23 +3,10 @@ include "includes/head.php";
 ?>
 
 <body>
-    <div class="top">
-        asldkfjasldkfjs FISHHEHRRR
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="event.php">Map</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div>
-        <link href="navbar.css" rel="stylesheet" type="text/css" media="all">
-    </div>
-
-    
-
-    <a href="group_join.php">Join a Group</a>
+    <?php
+    include "header.php";
+    ?>
+   
     <h3>
         Fisher when he's designing a database:
     </h3>

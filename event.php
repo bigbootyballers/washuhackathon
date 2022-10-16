@@ -3,12 +3,9 @@ include "includes/head.php";
 ?>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="event.php">Map</a></li>
-        </ul>
-    </nav>
+    <?php
+    include "header.php";
+    ?>
     <div id="map"></div>
     <script type="text/javascript">
         var map = L.map('map', {
