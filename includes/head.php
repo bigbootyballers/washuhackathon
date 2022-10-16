@@ -16,9 +16,7 @@
  
     <script type="text/javascript">
         function exportPath() {
-            const myJSONString = JSON.stringify(polyPoints);
-            alert(myJSONString);
-            return myJSONString;
+            document.cookie='route=' + JSON.stringify(polyPoints)
         }
     </script> 
 
