@@ -42,7 +42,7 @@ include "includes/head.php";
         <ul>
             <?php
             foreach ($users as $user) {
-                printf("<li>{$user["username"]}</li>");
+                printf("<li>%s</li>", $user["username"]);
             }
             ?>
         </ul>
