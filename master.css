@@ -78,3 +78,6 @@ button {
     height: 879px;
 }
 
+fieldset {
+    border: 0;
+}

@@ -44,14 +44,14 @@ include "includes/head.php";
         </div>
 
         <fieldset>
-            <legend>Private/Public:</legend>
+            <legend>Private/public:</legend>
             <div>
                 <input type="radio" name="private/public" id="private" value="private" checked>
                 <label for="private">Private</label>
             </div>
 
             <div>
-                <input type="radio" name="private/public" id="public" value="public" checked>
+                <input type="radio" name="private/public" id="public" value="public">
                 <label for="public">Public</label>
             </div>
         </fieldset>
