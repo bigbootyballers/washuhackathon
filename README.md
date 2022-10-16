@@ -1,6 +1,6 @@
 # Hackathon project
 Group members:
-* Charlie
-* Dean
-* Emily
-* Fisher
+* Charlie Eichman
+* Dean Petev
+* Emily Hao
+* Fisher Sun
