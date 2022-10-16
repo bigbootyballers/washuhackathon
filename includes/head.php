@@ -15,7 +15,7 @@
 
  
     <script type="text/javascript">
-        function myFunction() {
+        function exportPath() {
             const myJSONString = JSON.stringify(polyPoints);
             alert(myJSONString);
         }

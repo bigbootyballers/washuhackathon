@@ -7,15 +7,7 @@ include "includes/head.php";
     include "includes/header.php";
     ?>
 
-
-
-    <nav>
-        <ul>
-             <button onclick="myFunction()"> Press to export path.</button>
-        </ul>
-    </nav>
-
-
+    <p><button onclick="exportPath()">Export Path</button></p>
 
     <div id="map"></div>
     <script type="text/javascript">

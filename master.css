@@ -58,8 +58,18 @@ h2 {
 
 }
 
-/* Title header */
-h6 {
+button {
+    background-color: var(--grassgreen);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0 10px -5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color .5s;
 }
 
 /* Shows the map */
