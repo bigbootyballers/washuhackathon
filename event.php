@@ -57,7 +57,7 @@ include "includes/head.php";
             <form method="post" id="route_form" onsubmit="onDownload()"
                   action="<?php echo "util/export_path.php?event_id={$_GET['event_id']}"; ?>">
                 <input type="hidden" name="route" id="route" value="" />
-                <input type="submit" value="Export path"/>
+                <input type="submit" value="Save path"/>
             </form>
             <script>
                 function onDownload(){
