@@ -13,7 +13,7 @@ a {
 .top {
     background-color: var(--deepgreen);
     margin: 0px; /* this might fuck with dean's map snapping cleanly to navbar*/
-    padding: 4% 0% 1% 25px;
+    padding: 2% 0% 1% 25px;
     font-family: 'Aleo'; /*TODO: I don't want a serif font*/
     font-size: 22px;
     text-transform: uppercase;
