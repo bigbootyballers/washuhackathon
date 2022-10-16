@@ -31,15 +31,13 @@ include "includes/head.php";
             <?php echo $event["name"];?>
         </h1>
 
-        <form id="sampleForm" name="sampleForm" method="post">
-            <input type="hidden" name="total" id="total" value="">
-            <a href="#" onclick="setValue();">Click to submit</a>
-        </form>
+        <p>
+            <button onclick="exportPath()">Export Path</button>
+        </p>
 
         <?php
-        foreach ($_POST as $key => $value) {
-            printf("%s %s", $key, $value);
-        }
+        $str_json = file_get_contents('php://input');
+        echo $str_json;
         ?>
     </div>
 

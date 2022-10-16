@@ -16,9 +16,10 @@
  
     <script type="text/javascript">
         function exportPath() {
-            // https://stackoverflow.com/a/9882274
-            document.sampleForm.total.value = JSON.stringify(polyPoints);
-            document.forms["sampleForm"].submit();
+            const request = new XMLHttpRequest();
+            request.open("POST", "JSON_Handler.php", true)
+            request.setRequestHeader("Content-type", "application/json")
+            request.send(JSON.stringify(polyPoints))
         }
     </script> 
 
