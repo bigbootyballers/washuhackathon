@@ -15,17 +15,10 @@ include "includes/head.php";
             center: [38.6488, -90.3108],
             zoom: 15
         });
-        /*var popup = L.popup();*/
-        function onMapClick(e) {
-            /*popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(map);*/
-            var marker = new L.marker(e.latLng.lat, e.latLng.lng).addTo(map);
-            marker.openOn(map);
-        }
-        map.on('click', onMapClick);
-
+        map.on('click', function (e) {
+            var marker = new L.marker(e.latlng).addTo(map);
+            marker.bindPopup("Location: " + e.latlng.lat + ", " + e.latlng.lng).openPopup();
+        });
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
