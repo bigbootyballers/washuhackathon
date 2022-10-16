@@ -1,13 +1,15 @@
 @import "master.css";
 
 body {
-    background-color: var(--test);
+    background-color: white;
     color: black;
 }
 
 a {
     color: white;
 }
+
+/* Fuck simplex locks bro, that shit is not it*/
 
 /* Deep green header bar */
 .top {
