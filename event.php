@@ -67,6 +67,7 @@ include "includes/head.php";
             const myJSONString = JSON.stringify(polyPoints);
             alert(myJSONString);
             var blob1 = new Blob(myJSONString, { type: "text/plain;charset=utf-8" });
+            alert("dawg");
             window.navigator.msSaveBlob(blob1, "Customers.txt");
         }
 
