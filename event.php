@@ -54,7 +54,7 @@ include "includes/head.php";
         </ul>
 
         <form method="post" id="route_form">
-            <input type="hidden" name="route" id="route" value="" />
+            <input type="hidden" name="route" id="route" value="formInfo.route.value" />
             <input type="submit" value="Export path" />
         </form>
         <script>
