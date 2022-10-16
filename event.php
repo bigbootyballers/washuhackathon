@@ -54,13 +54,14 @@ include "includes/head.php";
         </ul>
 
         <form method="post" id="route_form">
-            <input type="hidden" name="route" id="route" value="formInfo.route.value" />
-            <input type="submit" value="Export path" />
+            <input type="hidden" name="route" id="route" value="" />
+            <input type="submit" value="Export path" id="uniqueID" />
         </form>
         <script>
             const formInfo = document.forms["route_form"];
             formInfo.route.value = JSON.stringify(polyPoints);
-            alert(formInfo.route.value);
+            var nameValue = document.getElementById("uniqueID").value;
+            alert(nameValue);
         </script>
 
         <?php print_r($_POST); ?>
