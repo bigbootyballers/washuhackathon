@@ -15,8 +15,9 @@ body {
     height: 100%;
 }
 
-main {
+main * {
     padding: 25px;
+    margin: 8px;
 }
 
 a {
